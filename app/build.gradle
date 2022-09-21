@@ -1,0 +1,70 @@
+apply plugin: 'com.android.application'
+/* mPaaS 移除冲突依赖*/
+configurations {
+    all*.exclude group:'com.amap.api', module: 'location'
+    //all*.exclude group:'com.amap.api', module: 'search'
+//    all*.exclude group:'androidx.annotation', module: 'annotation'
+}
+
+android {
+    def DEF_KEYSTORE_FILE_URL = './demo.jks'
+    def DEF_KEYSTORE_PASSWORD = "demo"
+    def DEF_KEY_ALIAS = "demo"
+    def DEF_KEY_PASSWORD = "demo"
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+    signingConfigs {
+        haier {
+            v1SigningEnabled true
+            storeFile file(project.hasProperty('STORE_FILE_PATH') ? STORE_FILE_PATH : DEF_KEYSTORE_FILE_URL)
+            storePassword project.hasProperty('STORE_PASSWORD') ? STORE_PASSWORD : DEF_KEYSTORE_PASSWORD
+            keyAlias project.hasProperty('KEY_ALIAS') ? KEY_ALIAS : DEF_KEY_ALIAS
+            keyPassword project.hasProperty('KEY_PASSWORD') ? KEY_PASSWORD : DEF_KEY_PASSWORD
+            println("-------DEF_KEYSTORE_FILE_URL-----------"+DEF_KEYSTORE_FILE_URL)
+            println("-------DEF_KEYSTORE_PASSWORD-----------"+DEF_KEYSTORE_PASSWORD)
+            println("-------DEF_KEY_ALIAS-----------"+DEF_KEY_ALIAS)
+        }
+    }
+    compileSdkVersion 30
+
+    defaultConfig {
+        applicationId "com.demo.test"
+        minSdkVersion 14
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        debug {
+            println("-------debug-----------")
+            minifyEnabled false
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.haier
+
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+//使用aar包时需要加上这段
+//repositories {
+//    flatDir { dirs 'libs' }
+//}
+
+dependencies {
+    //implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.amap.api:navi-3dmap:latest.integration'//3D地图so及jar
+    implementation 'com.amap.api:location:latest.integration'
+    implementation 'org.jetbrains:annotations:15.0'//定位功能
+ //  implementation files('libs/AMap_Location_V6.1.0_20220402.jar')
+//     implementation project(':diagnose:locdiagnoselib')
+    //    使用aar包时使用此种方式
+    //    compile (name:'AMapLocation_4.5.0_20190122', ext:'aar')
+}

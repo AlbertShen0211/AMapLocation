@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/AMapLocationDemo.iml" filepath="$PROJECT_DIR$/.idea/modules/AMapLocationDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/AMapLocationDemo.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/AMapLocationDemo.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/AMapLocationDemo.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/AMapLocationDemo.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/AMapLocationDemo.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/AMapLocationDemo.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/AMapLocationDemo.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/AMapLocationDemo.app.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/diagnose/AMapLocationDemo.diagnose.iml" filepath="$PROJECT_DIR$/.idea/modules/diagnose/AMapLocationDemo.diagnose.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/diagnose/locdiagnoselib/AMapLocationDemo.diagnose.locdiagnoselib.iml" filepath="$PROJECT_DIR$/.idea/modules/diagnose/locdiagnoselib/AMapLocationDemo.diagnose.locdiagnoselib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/diagnose/locdiagnoselib/AMapLocationDemo.diagnose.locdiagnoselib.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/diagnose/locdiagnoselib/AMapLocationDemo.diagnose.locdiagnoselib.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/diagnose/locdiagnoselib/AMapLocationDemo.diagnose.locdiagnoselib.main.iml" filepath="$PROJECT_DIR$/.idea/modules/diagnose/locdiagnoselib/AMapLocationDemo.diagnose.locdiagnoselib.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/diagnose/locdiagnoselib/AMapLocationDemo.diagnose.locdiagnoselib.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/diagnose/locdiagnoselib/AMapLocationDemo.diagnose.locdiagnoselib.unitTest.iml" />
+    </modules>
+  </component>
+</project>
